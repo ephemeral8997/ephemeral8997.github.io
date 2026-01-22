@@ -1,0 +1,12 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot server.js",
+    "build": "echo 'No build step needed for static HTML/CSS'",
+    "preview": "bun server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
