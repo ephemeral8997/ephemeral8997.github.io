@@ -2,58 +2,120 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="ephemeral8997 - Developer focused on automation, web development, and practical tools.">
+  <title>ephemeral8997 - Developer</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <meta name="google-site-verification" content="4MFLBRfVSt3FhnU55XNS_HxHK-9NfiCsQU77sSyxu4E" />
 
   <script src="config.js"></script>
 
   <script>
-    const personSchema = {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://ephemeral8997.github.io/#person",
-      "name": SITE_CONFIG.profile.username,
-      "image": `https://ephemeral8997.github.io/${SITE_CONFIG.profile.pfp}`,
-      "description": "Developer focused on automation, web development, and practical tools",
-      "url": "https://ephemeral8997.github.io",
-      "sameAs": SITE_CONFIG.socials.map(s => s.url),
-      "knowsAbout": [
-        "Python Programming", "Lua Programming", "HTML/CSS Development",
-        "SQL Databases", "Regular Expressions", "Bash Scripting",
-        "OCR Technology", "Automation Tools"
-      ],
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Developer"
-      }
-    };
-
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify([
-      personSchema,
-      {
+    if (typeof SITE_CONFIG !== 'undefined') {
+      const personSchema = {
         "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://ephemeral8997.github.io/#website",
+        "@type": "Person",
+        "@id": "https://ephemeral8997.github.io/#person",
+        "name": "ephemeral8997",
+        "image": "https://ephemeral8997.github.io/pfp.png",
+        "description": "Developer focused on automation, web development, and practical tools",
         "url": "https://ephemeral8997.github.io",
-        "name": "ephemeral8997 - Developer",
-        "author": { "@id": "https://ephemeral8997.github.io/#person" }
-      }
-    ]);
-    document.head.appendChild(script);
+        "sameAs": SITE_CONFIG.socials.map(s => s.url),
+        "knowsAbout": ["Python", "Lua", "Automation", "OCR", "Web Dev"],
+        "hasOccupation": { "@type": "Occupation", "name": "Developer" }
+      };
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify([
+        personSchema,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://ephemeral8997.github.io/#website",
+          "url": "https://ephemeral8997.github.io",
+          "name": "ephemeral8997",
+          "author": { "@id": "https://ephemeral8997.github.io/#person" }
+        }
+      ]);
+      document.head.appendChild(script);
+    }
   </script>
 </head>
 
 <body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">&gt; ephemeral8997</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="connect.html">Connect</a>
+      </div>
+    </div>
+  </nav>
+
   <section class="hero">
     <div class="container">
       <div class="hero-content">
+        <div class="profile-image">
+          <img src="pfp.png" alt="ephemeral8997" />
+        </div>
+        <div class="typing-container">
+          <span class="prefix">Hello, I'm</span>
+          <h1 class="name">ephemeral8997</h1>
+          <span class="code">&lt;Developer /&gt;</span>
+        </div>
+        <p class="subtitle">building practical automation tools and web applications</p>
         <div class="cta-buttons" id="hero-ctas">
           <a href="projects.html" class="btn btn-primary">View My Work</a>
         </div>
       </div>
+      <div class="hero-visual">
+        <div class="code-block">
+          <div class="code-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          <pre class="code-content"><code>const developer = {
+  name: 'ephemeral8997',
+  skills: ['Automation', 'Web Dev', 'Python'],
+  passionate: true
+};</code></pre>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="hash">#</span> What I Do</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Automation Tools</h3>
+          <p>Streamlining development processes.</p>
+        </div>
+        <div class="card">
+          <h3>Full-Stack</h3>
+          <p>Building robust applications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 ephemeral8997</p>
+    </div>
+  </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
