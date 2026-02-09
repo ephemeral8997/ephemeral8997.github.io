@@ -14,6 +14,27 @@ const SITE_CONFIG = {
             handle: "github.com/ephemeral8997"
         },
         {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/ephemeral8997/",
+            icon: "👔",
+            description: "Professional networking and career profile",
+            handle: "linkedin.com/in/ephemeral8997"
+        },
+        {
+            name: "Stack Overflow",
+            url: "https://stackoverflow.com/users/22695960/ephemeral8997",
+            icon: "🥞",
+            description: "Technical Q&A and community contributions",
+            handle: "stackoverflow.com/u/22695960"
+        },
+        {
+            name: "Dev.to",
+            url: "https://dev.to/ephemeral8997",
+            icon: "👩‍💻",
+            description: "Technical articles and developer insights",
+            handle: "dev.to/ephemeral8997"
+        },
+        {
             name: "Fandom",
             url: "https://community.fandom.com/f/u/53882193",
             icon: "🌟",
