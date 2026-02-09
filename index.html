@@ -2,216 +2,73 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="ephemeral8997 - Developer focused on automation, web development, and practical tools.">
-  <title>ephemeral8997 - Developer</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
   <meta name="google-site-verification" content="4MFLBRfVSt3FhnU55XNS_HxHK-9NfiCsQU77sSyxu4E" />
-  <script type="application/ld+json">
-  [
-    {
+
+  <script src="config.js"></script>
+
+  <script>
+    const personSchema = {
       "@context": "https://schema.org",
       "@type": "Person",
       "@id": "https://ephemeral8997.github.io/#person",
-      "name": "ephemeral8997",
-      "image": "https://ephemeral8997.github.io/pfp.png",
+      "name": SITE_CONFIG.profile.username,
+      "image": `https://ephemeral8997.github.io/${SITE_CONFIG.profile.pfp}`,
       "description": "Developer focused on automation, web development, and practical tools",
       "url": "https://ephemeral8997.github.io",
-      "sameAs": [
-        "https://github.com/ephemeral8997",
-        "https://community.fandom.com/f/u/53882193",
-        "https://www.elevenforum.com/members/ephemeral8997.52407/about",
-        "https://commons.wikimedia.org/wiki/User_talk:Ephemeral8997"
-      ],
+      "sameAs": SITE_CONFIG.socials.map(s => s.url), // Pulls all links automatically
       "knowsAbout": [
-        "Python Programming",
-        "Lua Programming",
-        "HTML/CSS Development", 
-        "SQL Databases",
-        "Regular Expressions",
-        "Bash Scripting",
-        "Computer Networking",
-        "Cryptography Concepts",
-        "Web Server Administration",
-        "OCR Technology",
-        "Automation Tools",
-        "Web Development"
+        "Python Programming", "Lua Programming", "HTML/CSS Development",
+        "SQL Databases", "Regular Expressions", "Bash Scripting",
+        "OCR Technology", "Automation Tools"
       ],
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Developer",
-        "description": "Building practical automation tools and web applications"
+        "name": "Developer"
       }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": "https://ephemeral8997.github.io/#website",
-      "url": "https://ephemeral8997.github.io",
-      "name": "ephemeral8997 - Developer",
-      "description": "Personal website showcasing development projects and technical work",
-      "inLanguage": "en",
-      "author": {
-        "@id": "https://ephemeral8997.github.io/#person"
-      },
-      "publisher": {
-        "@id": "https://ephemeral8997.github.io/#person"
+    };
+
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify([
+      personSchema,
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://ephemeral8997.github.io/#website",
+        "url": "https://ephemeral8997.github.io",
+        "name": "ephemeral8997 - Developer",
+        "author": { "@id": "https://ephemeral8997.github.io/#person" }
       }
-    },
-    {
-      "@context": "https://schema.org", 
-      "@type": "WebPage",
-      "@id": "https://ephemeral8997.github.io/#homepage",
-      "url": "https://ephemeral8997.github.io",
-      "name": "ephemeral8997 - Developer",
-      "description": "Personal website showcasing development projects and technical work",
-      "isPartOf": {
-        "@id": "https://ephemeral8997.github.io/#website"
-      },
-      "about": {
-        "@id": "https://ephemeral8997.github.io/#person"
-      },
-      "mainEntity": {
-        "@id": "https://ephemeral8997.github.io/#person"
-      }
-    }
-  ]
+    ]);
+    document.head.appendChild(script);
   </script>
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">&gt; ephemeral8997</a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html">Blog</a>
-        <a href="connect.html">Connect</a>
-      </div>
-    </div>
-  </nav>
-
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="profile-image">
-          <img src="pfp.png" alt="ephemeral8997" />
-        </div>
-        <div class="typing-container">
-          <span class="prefix">Hello, I'm</span>
-          <h1 class="name">ephemeral8997</h1>
-          <span class="code">&lt;Developer /&gt;</span>
-        </div>
-        <p class="subtitle">building practical automation tools and web applications</p>
-        <div class="quote">
-          <p>"A better world begins with taking part, not just watching from sidelines."</p>
-        </div>
-        <div class="cta-buttons">
+        <div class="cta-buttons" id="hero-ctas">
           <a href="projects.html" class="btn btn-primary">View My Work</a>
-          <a href="https://github.com/ephemeral8997" target="_blank" class="btn btn-secondary">GitHub</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="code-block">
-          <div class="code-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-          </div>
-          <pre class="code-content"><code>  const developer = {
-  name: 'ephemeral8997',
-  skills: ['Automation', 'Web Development', 'Python'],
-  passionate: true
-};
-
-developer.createAwesomeStuff();</code></pre>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="hash">#</span> What I Do</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">🔧</div>
-          <h3>Automation Tools</h3>
-          <p>Creating practical automation workflows to streamline development processes.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Automation</h3>
-          <p>Creating efficient automation workflows to streamline development.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💻</div>
-          <h3>Full-Stack Development</h3>
-          <p>Building robust applications from backend to frontend.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title"><span class="hash">#</span> Technical Skills</h2>
-      <div class="skills-section">
-        <div class="skill-category">
-          <h3 class="skill-category-title">Core Languages</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Lua 5.3</span>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Regex</span>
-            <span class="skill-tag">Bash</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="skill-category-title">Technologies & Concepts</h3>
-          <div class="skill-tags">
-            <span class="skill-tag secondary">Networking Basics</span>
-            <span class="skill-tag secondary">Cryptography Concepts</span>
-            <span class="skill-tag secondary">Web Server Setup</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3 class="skill-category-title">Past Experience</h3>
-          <div class="skill-tags">
-            <span class="skill-tag tertiary">JavaScript/Node.js/Bun</span>
-            <span class="skill-tag tertiary">Android Development</span>
-            <span class="skill-tag tertiary">Flash Development</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-dark">
-    <div class="container">
-      <h2 class="section-title"><span class="hash">#</span> Featured Projects</h2>
-      <div class="projects">
-        <p style="color: var(--text-secondary);">Projects will be added here...</p>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 ephemeral8997</p>
-    </div>
-  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const ctaContainer = document.getElementById('hero-ctas');
+      if (ctaContainer && typeof SITE_CONFIG !== 'undefined') {
+        const githubLink = document.createElement('a');
+        githubLink.href = SITE_CONFIG.profile.github;
+        githubLink.target = "_blank";
+        githubLink.className = "btn btn-secondary";
+        githubLink.rel = "me";
+        githubLink.textContent = "GitHub";
+        ctaContainer.appendChild(githubLink);
+      }
+    });
+  </script>
 </body>
 
 </html>
