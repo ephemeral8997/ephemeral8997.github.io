@@ -34,5 +34,6 @@ const SITE_CONFIG = {
             description: "Media contributions and discussions",
             handle: "commons.wikimedia.org/wiki/User_talk:Ephemeral8997"
         }
-    ]
+    ],
+    posts: []
 };

@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blog by ephemeral8997">
+  <meta name="description" content="Blog by ephemeral8997 - Automation and Development Insights">
   <title>Blog - ephemeral8997</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="container">
@@ -25,7 +29,12 @@
   <section class="section">
     <div class="container">
       <h1 class="section-title">Blog</h1>
-      <p style="color: var(--text-secondary);">Add your blog posts here...</p>
+      <p style="color: var(--text-secondary); margin-bottom: 3rem;">Sharing insights on automation, Python, and software
+        tools.</p>
+
+      <div id="blog-posts-container" class="grid">
+        <p style="color: var(--text-muted);">Loading articles...</p>
+      </div>
     </div>
   </section>
 
@@ -34,5 +43,33 @@
       <p>© 2026 ephemeral8997</p>
     </div>
   </footer>
+
+  <script src="config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('blog-posts-container');
+
+      // ensure it has posts
+      if (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.posts && container) {
+        if (SITE_CONFIG.posts.length === 0) {
+          container.innerHTML = '<p style="color: var(--text-secondary);">New posts coming soon...</p>';
+          return;
+        }
+
+        container.innerHTML = SITE_CONFIG.posts.map(post => `
+          <article class="card">
+            <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono);">${post.date}</span>
+            <h3 style="margin: 0.5rem 0; color: var(--text-primary);">${post.title}</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">${post.description}</p>
+            <div class="skill-tags">
+              ${post.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
+            </div>
+            <a href="${post.link}" style="margin-top: 1.5rem; display: inline-block; color: var(--accent-green); text-decoration: none; font-weight: 600;">Read More →</a>
+          </article>
+        `).join('');
+      }
+    });
+  </script>
 </body>
+
 </html>
