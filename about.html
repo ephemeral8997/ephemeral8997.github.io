@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="About ephemeral8997 - Developer from Egypt">
   <title>About - ephemeral8997</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
   <nav class="navbar">
     <div class="container">
@@ -34,13 +38,11 @@
             <p>"A better world begins with taking part, not just watching from sidelines."</p>
           </div>
           <p class="about-description">
-            I'm <strong>ephemeral8997</strong>, a developer from Egypt passionate about AI, automation, and building tools that solve real problems. I believe in actively participating in technology rather than just watching from the sidelines.
+            I'm <strong>ephemeral8997</strong>, a developer from Egypt passionate about AI, automation, and building
+            tools that solve real problems.
           </p>
-          <div class="social-links">
-            <a href="https://github.com/ephemeral8997" target="_blank">GitHub</a>
-            <a href="https://community.fandom.com/f/u/53882193" target="_blank">Fandom</a>
-            <a href="https://www.elevenforum.com/members/ephemeral8997.52407/about" target="_blank">ElevenForum</a>
-          </div>
+
+          <div id="about-socials" class="social-links"></div>
         </div>
       </div>
     </div>
@@ -51,5 +53,19 @@
       <p>© 2026 ephemeral8997</p>
     </div>
   </footer>
+
+  <script src="config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('about-socials');
+      if (typeof SITE_CONFIG !== 'undefined' && container) {
+        // simple buttons
+        container.innerHTML = SITE_CONFIG.socials.map(link => `
+          <a href="${link.url}" target="_blank" rel="me">${link.name}</a>
+        `).join('');
+      }
+    });
+  </script>
 </body>
+
 </html>
