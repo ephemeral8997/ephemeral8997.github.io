@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/ephemeral8997
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://ephemeral8997.github.io
+  * I am ephemeral8997 (https://keybase.io/ephemeral8997) on keybase.
+  * I have a public key ASCesulNRZ9rO2zKpFiJ9Mb_9UcViN0GoNcpnGVkem6n6Ao
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01209eb2e94d459f6b3b6ccaa45889f4c6fff5471588dd06a0d7299c65647a6ea7e80a",
+      "host": "keybase.io",
+      "kid": "01209eb2e94d459f6b3b6ccaa45889f4c6fff5471588dd06a0d7299c65647a6ea7e80a",
+      "uid": "42ffe43de396e0e66ea5403c4dec4d19",
+      "username": "ephemeral8997"
+    },
+    "merkle_root": {
+      "ctime": 1777056769,
+      "hash": "07c7a4aead22677ca08af038f28fa3a80c1dceee1210b0a26efacfb59bf1cdd56b9255d1aa31f704b92bf051947b782d36dca58d7d5ae730200e81278e668489",
+      "hash_meta": "86049720c3cbbbb7c971a1fc1b80fcfe9bd074169c88e27a0c37a50ad06f2aed",
+      "seqno": 27547161
+    },
+    "service": {
+      "entropy": "MrPC6X0ywp+WqOOX5VsUJ7vB",
+      "hostname": "ephemeral8997.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.6.2"
+  },
+  "ctime": 1777056786,
+  "expire_in": 504576000,
+  "prev": "05e76f915237395eafdda8a23d3c96325bf5add4148bb7e2daae6679f0fa962a",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgnrLpTUWfaztsyqRYifTG//VHFYjdBqDXKZxlZHpup+gKp3BheWxvYWTESpcCCMQgBedvkVI3OV6v3aiiPTyWMlv1rdQUi7fi2q5mefD6lirEIOL6sWeOksPKPG+5tWHwXmEc+qW3311ZXVkXQEWlHkZ2AgHCo3NpZ8RATyf/0cgErmbV4DxcXu6OPqaYuFjs2dahZDZ9fX7EzYZOJyUIoHCEwkD/YIwznu5UI9YxOqoj+TEizZrStYwRBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIBXxsxzd+sgeqEwnJ7BxqAPSXKhJi6oMWYaSpuROC8zPo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ephemeral8997
+
+==================================================================
